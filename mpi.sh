@@ -3,7 +3,7 @@
 #PBS -l nodes=2:ppn=2
 #PBS -e mpi_logs/error.log
 #PBS -o mpi_logs/output.log
-#PBS -V
+##PBS -V
 
 cd $PBS_O_WORKDIR
 JOBS_TO_RUN=$total
