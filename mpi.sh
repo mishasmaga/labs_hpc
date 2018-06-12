@@ -18,7 +18,7 @@ echo $LEFT_CHILD >> "lefts"
 echo $RIGHT_CHILD >> "rights"
 
 if [ "$LEFT_CHILD" -gt 0 ]; then
-	qsub mpi.sh -v total=$((JOBS_TO_RUN / 2))
+	qsub -v total=$((JOBS_TO_RUN / 2)) mpi.sh
 fi
 #if [ "$RIGHT_CHILD" -gt 0 ]; then
 #	qsub mpi.sh -v total=${RIGHT_CHILD}
