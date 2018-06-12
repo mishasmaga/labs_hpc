@@ -6,7 +6,8 @@
 #PBS -V
 
 cd $PBS_O_WORKDIR
-JOBS_TO_RUN=${1}
+JOBS_TO_RUN=${total}
+echo $JOBS_TO_RUN >> "totals"
 JOBS_TO_RUN=$((JOBS_TO_RUN-1))
 LEFT_CHILD=$((JOBS_TO_RUN / 2))
 RIGHT_CHILD=$((JOBS_TO_RUN / 2 + JOBS_TO_RUN % 2))
