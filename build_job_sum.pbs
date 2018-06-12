@@ -1,0 +1,6 @@
+#!/bin/bash
+#PBS -l walltime=0:02:00
+#PBS -N smaga_sum_integral
+#PBS -o res/ -e out/err
+cd $PBS_O_WORKDIR
+cat res/* | awk 'BEGIN{x=0}{x+=$0}END{print x}' > gt

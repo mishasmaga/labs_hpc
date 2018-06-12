@@ -1,0 +1,6 @@
+#!/bin/bash
+#PBS -l walltime=0:02:00
+#PBS -N build_job_man
+#PBS -o res/ -e out/err
+cd $PBS_O_WORKDIR
+cat host/$man_id/* > host2/$man_id
