@@ -5,4 +5,7 @@ rm -rf res
 mkdir res
 rm -rf out
 mkdir out
-qsub ./build_job.pbs -t 1-10
+
+ z=$(qsub ./build_job.pbs -t 1-10); 
+ 
+ qsub -W depend=afterokarray:$z build_sum.pbs
