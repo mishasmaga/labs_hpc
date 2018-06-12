@@ -17,7 +17,7 @@ echo $HOSTNAME >> "hostnames";
 #echo $RIGHT_CHILD >> "hostnames";
 
 if [ "$LEFT_CHILD" -gt 0 ]; then
-	./mpi.sh ${LEFT_CHILD}
+	qsub mpi.sh -v total=${LEFT_CHILD}
 fi;
 if [ "$RIGHT_CHILD" -gt 0 ]; then
 	qsub mpi.sh -v total=${RIGHT_CHILD}
