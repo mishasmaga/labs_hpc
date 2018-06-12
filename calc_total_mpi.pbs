@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -l walltime=0:02:00
-#PBS -N smaga_sum_integral
+#PBS -N smaga_stat_mpi
 #PBS  -e out/err
 cd $PBS_O_WORKDIR
 cat hostnames |uniq -c  > uniq_hosts
