@@ -6,7 +6,7 @@
 #PBS -V
 
 cd $PBS_O_WORKDIR
-JOBS_TO_RUN=${1}
+JOBS_TO_RUN=$total
 echo $JOBS_TO_RUN >> "totals"
 JOBS_TO_RUN=$((JOBS_TO_RUN-1))
 LEFT_CHILD=$((JOBS_TO_RUN / 2))
@@ -18,7 +18,7 @@ echo $LEFT_CHILD >> "lefts"
 echo $RIGHT_CHILD >> "rights"
 
 if [ "$LEFT_CHILD" -gt 0 ]; then
-	./mpi.sh ${LEFT_CHILD} 
+	qsub -v total=$LEFT_CHILD mpi.sh
 fi
 #if [ "$RIGHT_CHILD" -gt 0 ]; then
 #	qsub mpi.sh -v total=${RIGHT_CHILD}
