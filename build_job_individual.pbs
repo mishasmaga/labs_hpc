@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -l walltime=0:02:00
+#PBS -N smaga_sum_integral
+#PBS -o res/ -e out/err
+#PBS -l nodes=2:ppn=2
+
+cd $PBS_O_WORKDIR
+
+cat res/* | awk 'BEGIN{x=0}{x+=$0}END{print x}' > gt
+
+ z=$(qsub ./build_job_individual.pbs -t 1-2); 
+ 
+
+
+qsub ./build_job_individual.pbs -t 1-2
