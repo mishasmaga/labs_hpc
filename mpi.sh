@@ -20,6 +20,6 @@ echo $RIGHT_CHILD >> "rights"
 if [ "$LEFT_CHILD" -gt 0 ]; then
 	qsub -v total=$LEFT_CHILD mpi.sh
 fi
-#if [ "$RIGHT_CHILD" -gt 0 ]; then
-#	qsub mpi.sh -v total=${RIGHT_CHILD}
-#fi;
+if [ "$RIGHT_CHILD" -gt 0 ]; then
+	qsub -v total=$RIGHT_CHILD mpi.sh 
+fi;
