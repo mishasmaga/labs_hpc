@@ -8,4 +8,4 @@ mkdir out
 
  z=$(qsub ./build_job.pbs -t 1-10); 
  
- qsub -W depend=afterokarray:$z build_sum.pbs
+ qsub -W depend=afterokarray:$z build_job_sum.pbs
