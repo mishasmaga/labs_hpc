@@ -14,12 +14,12 @@ RIGHT_CHILD=$((JOBS_TO_RUN / 2 + JOBS_TO_RUN % 2))
 
 mpirun -n 2 ./exe
 echo $HOSTNAME >> "hostnames";
-#echo $LEFT_CHILD >> "hostnames";
-#echo $RIGHT_CHILD >> "hostnames";
+echo $LEFT_CHILD >> "lefts";
+echo $RIGHT_CHILD >> "rights";
 
 if [ "$LEFT_CHILD" -gt 0 ]; then
 	qsub mpi.sh -v total=${LEFT_CHILD}
 fi;
-if [ "$RIGHT_CHILD" -gt 0 ]; then
-	qsub mpi.sh -v total=${RIGHT_CHILD}
-fi;
+#if [ "$RIGHT_CHILD" -gt 0 ]; then
+#	qsub mpi.sh -v total=${RIGHT_CHILD}
+#fi;
