@@ -16,6 +16,8 @@ echo $HOSTNAME >> "hostnames"
 #echo $LEFT_CHILD >> "lefts"
 #echo $RIGHT_CHILD >> "rights"
 
+
+
 if [ "$LEFT_CHILD" -gt 0 ]; then
 	qsub -v total=$LEFT_CHILD mpi.sh
 fi
